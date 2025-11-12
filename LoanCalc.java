@@ -61,8 +61,8 @@ public class LoanCalc {
 	public static double bisectionSolver(double loan, double rate, int n, double epsilon) {
 		double lowPayment = loan / n;
 		double maxPayment = loan;
-		double mid = (maxPayment + lowPayment)/2;
-		while (Math.abs(endBalance(loan, rate, n, mid)) > epsilon) {
+		while (maxPayment - lowPayment > epsilon) {
+			double mid = (maxPayment + lowPayment)/2.0;
 			double current = endBalance(loan, rate, n, mid);
 			if (current>0) {
 				lowPayment = mid;
@@ -74,7 +74,7 @@ public class LoanCalc {
 			mid = (maxPayment + lowPayment)/2;
 			iterationCounter++;
 		}
-		double payments = (maxPayment + lowPayment)/2;
+		double payments = (maxPayment + lowPayment)/2.0;
 
 		return payments;
 	}
