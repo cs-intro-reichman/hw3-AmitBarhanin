@@ -83,8 +83,6 @@ public class Algebra {
 		if (oneIsNegative) {
 			count = times(count, -1);
 		}
-		System.out.println(count);ע
-
 		return count;
 	}
 
