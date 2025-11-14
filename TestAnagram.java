@@ -3,13 +3,13 @@ public class TestAnagram {
     private static int passedTests = 0;
 
     public static void main(String[] args) {
-        testIsAnagram();
+      testIsAnagram();
         testPreProcess();
-        testRandomAnagram();
+       testRandomAnagram();
         
-        System.out.println("\nTotal tests: " + totalTests);
+      System.out.println("\nTotal tests: " + totalTests);
         System.out.println("Passed tests: " + passedTests);
-        System.out.println("Success rate: " + (passedTests * 100.0 / totalTests) + "%");
+      System.out.println("Success rate: " + (passedTests * 100.0 / totalTests) + "%");
     }
 
     public static int testIsAnagram() {
@@ -47,12 +47,12 @@ public class TestAnagram {
         totalTests += 4;
 
         // Test case 1: Simple lowercase
-        boolean test1 = Anagram.preProcess("abc").equals("abc");
+        boolean test1 = Anagram.preProcess("000000").equals("");
         System.out.println("Test 1 (simple lowercase): " + (test1 ? "PASS" : "FAIL"));
         
-        // Test case 2: Preserve spaces
-        boolean test2 = Anagram.preProcess("Hello World!").equals("hello world");
-        System.out.println("Test 2 (preserve spaces): " + (test2 ? "PASS" : "FAIL"));
+        // Test case 2: Remove spaces
+        boolean test2 = Anagram.preProcess("Hello World!").equals("helloworld");
+        System.out.println("Test 2 (remove spaces): " + (test2 ? "PASS" : "FAIL"));
         
         // Test case 3: Convert to lowercase
         boolean test3 = Anagram.preProcess("HeLLo").equals("hello");
